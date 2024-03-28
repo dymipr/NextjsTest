@@ -39,21 +39,10 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import logoETH from '@/components/icons/logo_ETH.svg';
-import logoWBTC from '@/components/icons/logo_WBTC.svg'
-import logoFRAX from '@/components/icons/logo_FRAX.svg'
-import logoPEPE from '@/components/icons/logo_PEPE.svg'
-import logoMKR from '@/components/icons/logo_MKR.svg'
-import logoUNI from '@/components/icons/logo_UNI.svg'
-import logoLINK from '@/components/icons/logo_LINK.svg'
-import logoRBN from '@/components/icons/logo_RBN.svg'
-import logoSHIB from '@/components/icons/logo_SHIB.svg'
-import logoLDO from '@/components/icons/logo_LDO.svg'
-
 const data: Payment[] = [
   {
     id: "1",
-    avatar: "/logo_ETH.svg",
+    avatar: "/logo_ETH_s.svg",
     prince: 3500,
     asset: "Ethereum ETH",
     balance: 2.5,
@@ -61,7 +50,7 @@ const data: Payment[] = [
   },
   {
     id: "2",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_WBTC_s.svg",
     prince: 3500,
     asset: "Wrapped Bitcoin WBTC",
     balance: 0.05,
@@ -69,7 +58,7 @@ const data: Payment[] = [
   },
   {
     id: "3",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_FRAX_s.svg",
     prince: 3500,
     asset: "Frax FRAX",
     balance: 360,
@@ -77,7 +66,7 @@ const data: Payment[] = [
   },
   {
     id: "4",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_PEPE_s.svg",
     prince: 3500,
     asset: "Pepe PEPE",
     balance: 1000520,
@@ -85,7 +74,7 @@ const data: Payment[] = [
   },
   {
     id: "5",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_MKR_s.svg",
     prince: 3500,
     asset: "Maker MKR",
     balance: 1,
@@ -93,7 +82,7 @@ const data: Payment[] = [
   },
   {
     id: "6",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_UNI.svg",
     prince: 3500,
     asset: "Uniswap UNI",
     balance: 25,
@@ -101,7 +90,7 @@ const data: Payment[] = [
   },
   {
     id: "7",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_LINK.svg",
     prince: 721,
     asset: "ChainLink Token LINK",
     balance: 50,
@@ -109,7 +98,7 @@ const data: Payment[] = [
   },
   {
     id: "8",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_RBN.svg",
     prince: 721,
     asset: "Ribbon RBN",
     balance: 350,
@@ -117,7 +106,7 @@ const data: Payment[] = [
   },
   {
     id: "9",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_SHIB.svg",
     prince: 721,
     asset: "Shiba INU SHIB",
     balance: 3800,
@@ -125,7 +114,7 @@ const data: Payment[] = [
   },
   {
     id: "10",
-    avatar: "@/components/icons/logo_ETH.svg",
+    avatar: "/logo_LDO.svg",
     prince: 721,
     asset: "Lido DAO Token LDO",
     balance: 1,
@@ -158,7 +147,7 @@ export const columns: ColumnDef<Payment>[] = [
     },
     cell: ({ row }) => {
       return (
-        <div className="text-left font-medium">
+        <div className="text-left font-medium flex items-center">
           {/* <Image
             src={row.getValue('avatar')}
             alt="Arrow"
@@ -166,6 +155,7 @@ export const columns: ColumnDef<Payment>[] = [
             sizes="20vw"
             priority
           /> */}
+          <img className="pr-2" src={data[row.index].avatar} />
           {row.getValue('asset')}
         </div>
       );
@@ -176,7 +166,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className="inline hover:text-custom-orange"
+          className=" hover:text-custom-orange max-sm:hidden"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Balance
@@ -184,7 +174,7 @@ export const columns: ColumnDef<Payment>[] = [
         </div>
       )
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("balance")}</div>,
+    cell: ({ row }) => <div className="lowercase max-sm:hidden">{row.getValue("balance")}</div>,
   },
   {
     accessorKey: "prince",
@@ -216,11 +206,11 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className=" text-center inline hover:text-custom-orange"
+          className="flex hover:text-custom-orange"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Value
-          <CaretSortIcon className="ml-2 h-4 w-4 inline-block" />
+          Balance
+          <CaretSortIcon className="ml-2 h-4 w-4" />
         </div>
       )
     },
@@ -233,14 +223,7 @@ export const columns: ColumnDef<Payment>[] = [
         currency: "USD",
       }).format(value)
 
-      return <div className="text-left font-medium">{formatted}</div>
-    },
-  },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original
+      return <div className="text-right font-medium">{formatted}</div>
     },
   },
 ]

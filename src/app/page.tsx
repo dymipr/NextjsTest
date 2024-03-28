@@ -8,16 +8,17 @@ import ChartG from "@/components/Chart";
 import MyBalance from "@/components/MyBalances";
 import { DataTableDemo } from "@/components/CustomTable";
 import { CustomSwapList } from "@/components/CustomSwapLists";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
   return (
     <div className="bg-black">
-      <div>
-      <Header/>
+      <div className="absolute z-30 w-full">
+        <Header />
 
       </div>
-      <div className=" relative grid gap-20 pr-[80px] pl-[80px] pt-[32px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
+      <div className=" relative grid gap-20 pr-[80px] pl-[80px] pt-[100px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
         <div>
           <MyBalance />
         </div>
@@ -32,6 +33,9 @@ export default function Home() {
         <div>
           <CustomSwapList />
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
