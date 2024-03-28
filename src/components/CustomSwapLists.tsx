@@ -25,7 +25,8 @@ import activTransfer from '@/components/icons/activity_transferred.svg'
 import activBridged from '@/components/icons/activity_bridged.svg'
 import activSwap from '@/components/icons/activity_swap.svg'
 import logoARROW from '@/components/icons/logo_ARROW.svg'
-import './style.css'
+import './ui/style.css'
+
 const data = [
   {
     avatar: activSwap1,
@@ -68,8 +69,8 @@ export function CustomSwapList() {
   return (
     <div>
       <p className="text-3xl text-white pb-[37px] font-inter font-bold">Recent Activity</p>
-      {data.map((data) => (
-        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 p-3 transition ease-in-out delay-80 hover:text-custom-orange duration-300">
+      {data.map((data, index) => (
+        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 p-3 transition ease-in-out delay-80 hover:text-custom-orange duration-300" key={index}>
           <div className="flex">
             <div className="w-2/8">
               <div

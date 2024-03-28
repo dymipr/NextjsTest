@@ -4,10 +4,10 @@ import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import arrow from "@/components/icons/arrow.png";
 import coinSvg from "@/components/icons/coin1.svg";
-import ChartG from "@/components/ui/Chart";
-import MyBalance from "@/components/ui/Mybalance";
-import { DataTableDemo } from "@/components/ui/CustomTable";
-import { CustomSwapList } from "@/components/ui/customSwapList";
+import ChartG from "@/components/Chart";
+import MyBalance from "@/components/MyBalances";
+import { DataTableDemo } from "@/components/CustomTable";
+import { CustomSwapList } from "@/components/CustomSwapLists";
 
 
 export default function Home() {
