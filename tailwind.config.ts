@@ -79,7 +79,7 @@ const config = {
         c1 : '24px',
         c2 : '32px',
         c3 : '50px',
-        c4 : '80px',
+        c4 : '64px',
       }
     },
   },

@@ -23,7 +23,7 @@ export default function Header() {
         <div className="relative">
             <div className={`absolute h-lvh bg-white w-full opacity-40  ${ !active && "hidden" }`} onClick={() => setActive(!active)}></div>
             <div className={`bg-dark-accent absolute w-full ${ active ? " rounded-b-3xl " : "h-[58px]"}`}>
-                <div className="flex items-center justify-between flex-wrap h-[57px] pl-[80px] pr-[80px] max-sm:pl-[20px] max-sm:pr-[20px]">
+                <div className="flex items-center justify-between flex-wrap h-[57px] pl-[80px] pr-[80px] max-sm:pl-[20px] max-sm:pr-[10px]">
                     <div className="">
                         <Image
                             src={profileLogo}
@@ -39,7 +39,7 @@ export default function Header() {
                         <a className="text-white border-b-4 border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
                         <a className="text-white hover:border-b-4 hover:border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center">
 
                         <button
                             className="flex items-center rounded-full py-1 px-1 bg-gradient-to-br from-orange-500 to-pink-500 text-white hover:from-orange-500 hover:to-orange-600 hover:bg-gradient-to-tr"
@@ -61,8 +61,8 @@ export default function Header() {
                     <div className="flex flex-col items-end">
                         <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-3 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
                         <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">DashBoard</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Analayis</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 mb-8 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
                     </div>
                 </div>
             </div>

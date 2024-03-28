@@ -20,13 +20,13 @@ import trandingUp from '@/components/icons/trending_up.svg'
 export default function MyBalance() {
     return (
         <div>
-            <div className="grid grid-cols-2 bg-dark-accent rounded-[32px] relative p-8 overflow-hidden">
+            <div className="grid grid-cols-2 bg-dark-accent rounded-[32px] relative p-8 overflow-hidden max-sm:p-4">
                 <div className="z-20">
                     <p className="text-c1 text-white font-[HankenGroteskRegular] ">My Balance</p>
-                    <p className="text-c4 text-white font-[HankenGroteskRegular] font-bold max-[600px]:text-[60px]">$25,350.52</p>
-                    <b className="block text-xs md:text-lg mb-4 font-[HankenGroteskRegular] w-[300px] md:w-[400px] text-white">
+                    <p className="text-c4 text-white font-[HankenGroteskRegular] pb-4 font-bold max-[600px]:text-[60px]">$25,350.52</p>
+                    <p className="block text-xs md:text-lg mb-4 font-[HankenGroteskRegular] w-[300px] md:w-[400px] text-white">
                         Grow your portfolio{" "}
-                        <a href="your_other_link_url" className="text-[#C86C00] underline font-[HankenGroteskRegular] inline">
+                        <a href="your_other_link_url" className="text-[#C86C00] underline font-[HankenGroteskRegular] inline font-normal">
                             check latest listed coins
                         </a>
                         <div
@@ -39,8 +39,8 @@ export default function MyBalance() {
                                 priority
                             />
                         </div>
-                        <p className="text-white text-xs font-extralight">*All values represented in USD</p>
-                    </b>
+                        <p className="text-white  text-xs font-extralight">*All values represented in USD</p>
+                    </p>
                 </div>
                 <div className="z-10">
                     <Image
@@ -52,7 +52,7 @@ export default function MyBalance() {
                 </div>
             </div>
             <div className=" pt-8">
-                <p className=" text-2xl text-white">Your top movers</p>
+                <p className=" text-2xl text-white pb-4">Your top movers</p>
                 <div className="h-[35%] flex overflow-x-hidden">
                     <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex " style={{ animation: 'scrollAnimation 20s linear infinite' }}>
                         <div className="w-1/3 flex-none">
