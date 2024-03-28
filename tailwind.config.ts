@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       colors: {
+        'custom-c8' : '#c86c00',
         'dark-accent' : '#190F01',
         'custom-orange' : '#FF6800',
         border: "hsl(var(--border))",

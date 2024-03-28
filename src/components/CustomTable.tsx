@@ -7,6 +7,7 @@ import {
   ChevronDownIcon,
   DotsHorizontalIcon,
 } from "@radix-ui/react-icons"
+import sortIcon from '@/components/icons/sortIcon.svg'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -29,7 +30,6 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 
-import { Button } from "@/components/ui/button"
 import {
   Table,
   TableBody,
@@ -137,11 +137,15 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className="inline hover:text-custom-orange"
+          className="inline hover:text-custom-c8"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Asset
-          <CaretSortIcon className="ml-2 h-4 w-4 inline-block" />
+          <Image 
+            src={sortIcon}
+            alt="sortIcon"
+            className="ml-2 h-4 w-4 inline-block hover:text-custom-c8"
+          />
         </div>
       )
     },
@@ -166,26 +170,34 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className=" hover:text-custom-orange max-sm:hidden"
+          className=" hover:text-custom-c8 max-sm:hidden flex justify-center"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Balance
-          <CaretSortIcon className="ml-2 h-4 w-4 inline-block" />
+          <Image 
+            src={sortIcon}
+            alt="sortIcon"
+            className="ml-2 h-4 w-4 max-sm:hidden inline-block hover:text-custom-c8"
+          />
         </div>
       )
     },
-    cell: ({ row }) => <div className="lowercase max-sm:hidden">{row.getValue("balance")}</div>,
+    cell: ({ row }) => <div className="lowercase max-sm:hidden text-center">{row.getValue("balance")}</div>,
   },
   {
     accessorKey: "prince",
     header: ({ column }) => {
       return (
         <div
-          className=" text-center inline hover:text-custom-orange"
+          className=" flex justify-center hover:text-custom-c8  max-sm:hidden"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Price
-          <CaretSortIcon className="ml-2 h-4 w-4 inline-block" />
+          <Image 
+            src={sortIcon}
+            alt="sortIcon"
+            className="ml-2 h-4 w-4 max-sm:hidden hover:text-custom-c8"
+          />
         </div>
       )
     },
@@ -198,7 +210,7 @@ export const columns: ColumnDef<Payment>[] = [
         currency: "USD",
       }).format(prince)
 
-      return <div className="text-left font-medium">{formatted}</div>
+      return <div className="text-center font-medium max-sm:hidden ">{formatted}</div>
     },
   },
   {
@@ -206,11 +218,15 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className="flex hover:text-custom-orange"
+          className="flex hover:text-custom-c8 justify-center"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Balance
-          <CaretSortIcon className="ml-2 h-4 w-4" />
+          Value
+          <Image 
+            src={sortIcon}
+            alt="sortIcon"
+            className="ml-2 h-4 w-4 inline-block"
+          />
         </div>
       )
     },
@@ -223,7 +239,7 @@ export const columns: ColumnDef<Payment>[] = [
         currency: "USD",
       }).format(value)
 
-      return <div className="text-right font-medium">{formatted}</div>
+      return <div className="text-center font-medium">{formatted}</div>
     },
   },
 ]
@@ -279,7 +295,7 @@ export function DataTableDemo() {
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
-                className="transition ease-in-out delay-80 hover:bg-custom-orange/10 hover:text-custom-orange duration-300"
+                className="transition ease-in-out delay-80 hover:bg-custom-c8/10 hover:text-custom-c8 duration-300"
                 key={row.id}
               >
                 {row.getVisibleCells().map((cell) => (

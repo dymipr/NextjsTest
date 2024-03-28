@@ -18,7 +18,7 @@ export default function Home() {
         <Header />
 
       </div>
-      <div className=" relative grid gap-20 pr-[80px] pl-[80px] pt-[100px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
+      <div className=" relative grid gap-6 pr-[80px] pl-[80px] pt-[100px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
         <div>
           <MyBalance />
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
           <ChartG />
         </div>
       </div>
-      <div className="grid gap-20 pr-[80px] pl-[80px] pt-[32px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
+      <div className="grid gap-6 pr-[80px] pl-[80px] pt-[32px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:pr-1 max-sm:pl-1">
         <div>
           <DataTableDemo />
         </div>

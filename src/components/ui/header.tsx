@@ -21,8 +21,8 @@ export default function Header() {
     const [active, setActive] = useState(false);
     return (
         <div className="relative">
-            <div className={`absolute h-screen bg-white w-full opacity-40 ${ !active && "hidden" }`} onClick={() => setActive(!active)}></div>
-            <div className={`bg-dark-accent absolute w-full ${ active ? "h-[300px] rounded-b-3xl" : "h-[58px]"}`}>
+            <div className={`absolute h-lvh bg-white w-full opacity-40  ${ !active && "hidden" }`} onClick={() => setActive(!active)}></div>
+            <div className={`bg-dark-accent absolute w-full ${ active ? " rounded-b-3xl " : "h-[58px]"}`}>
                 <div className="flex items-center justify-between flex-wrap h-[57px] pl-[80px] pr-[80px] max-sm:pl-[20px] max-sm:pr-[20px]">
                     <div className="">
                         <Image
@@ -36,8 +36,8 @@ export default function Header() {
                     <div className="visible max-lg:hidden">
                         <a className="text-white hover:border-b-4 hover:border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">Swap</a>
                         <a className="text-white hover:border-b-4 hover:border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">Bridge</a>
-                        <a className="text-white border-b-4 border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">DashBoard</a>
-                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">Analayis</a>
+                        <a className="text-white border-b-4 border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">Dashboard</a>
+                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] ml-3 mr-3 p-1 pb-1 rounded-sm">Analytics</a>
                     </div>
                     <div className="flex items-center justify-center">
 
