@@ -48,7 +48,7 @@ export default function Header() {
                     />
                     <div className="pl-2 pr-2 max-sm:hidden">degentrades.lens</div>
                 </Button>
-                <svg className=" absolute h-8 w-8 text-white inline-block top-1 sm:hidden pr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">  <circle cx="12" cy="12" r="1" />  <circle cx="12" cy="5" r="1" />  <circle cx="12" cy="19" r="1" /></svg>
+                <svg className=" absolute h-8 w-8 text-white inline-block top-1 sm:hidden pr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">  <circle cx="12" cy="12" r="1" />  <circle cx="12" cy="5" r="1" />  <circle cx="12" cy="19" r="1" /></svg>
 
             </div>
         </div>
