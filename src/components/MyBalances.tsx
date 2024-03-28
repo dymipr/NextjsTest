@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import arrow from "@/components/icons/arrow.png";
+import arrow from "@/components/icons/arrow_outward.svg";
 import coinSvg from "@/components/icons/coin1.svg";
 import logoETH from '@/components/icons/logo_ETH.svg';
 import logoWBTC from '@/components/icons/logo_WBTC.svg'
@@ -20,24 +20,22 @@ import trandingUp from '@/components/icons/trending_up.svg'
 export default function MyBalance() {
     return (
         <div>
-            <div className="grid grid-cols-2 bg-dark-accent rounded-[32px] relative p-8">
+            <div className="grid grid-cols-2 bg-dark-accent rounded-[32px] relative p-8 overflow-hidden">
                 <div className="z-20">
                     <p className="text-c1 text-white font-[HankenGroteskRegular] ">My Balance</p>
                     <p className="text-c4 text-white font-[HankenGroteskRegular] font-bold max-[600px]:text-[60px]">$25,350.52</p>
                     <b className="block text-xs md:text-lg mb-4 font-[HankenGroteskRegular] w-[300px] md:w-[400px] text-white">
                         Grow your portfolio{" "}
-                        <a href="your_other_link_url" className="text-[#C86C00] underline font-[HankenGroteskRegular]">
+                        <a href="your_other_link_url" className="text-[#C86C00] underline font-[HankenGroteskRegular] inline">
                             check latest listed coins
                         </a>
                         <div
-                            style={{ width: "13px", height: "13px" }}
-                            className="md:w-16 overflow-hidden border-solid border-dark dark:border-gray mr-2 xs:mr-4 inline-block ml-2"
+                            className="border-solid border-dark dark:border-gray mr-2 xs:mr-4 inline-block"
                         >
                             <Image
                                 src={arrow}
                                 alt="Arrow"
-                                className="w-2 h-2 md:w-24 md:h-auto mt-0.7"
-                                sizes="20vw"
+                                className="w-5 h-5 md:h-auto mt-0.7"
                                 priority
                             />
                         </div>
@@ -48,7 +46,7 @@ export default function MyBalance() {
                     <Image
                         src={coinSvg}
                         alt="Arrow"
-                        className="md:h-auto right-[32px] absolute"
+                        className="md:h-auto left-3/4 absolute"
                         priority
                     />
                 </div>

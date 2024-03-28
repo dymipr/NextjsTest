@@ -19,58 +19,31 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import activSwap1 from '@/components/icons/activity_swap1.svg'
-import activReceived from '@/components/icons/activity_received.svg'
-import activTransfer from '@/components/icons/activity_transferred.svg'
-import activBridged from '@/components/icons/activity_bridged.svg'
-import activSwap from '@/components/icons/activity_swap.svg'
+
 import logoARROW from '@/components/icons/logo_ARROW.svg'
 import '../../style.css'
+import { useState } from "react"
+import { activityData } from "@/data/sample"
 
-const data = [
-  {
-    avatar: activSwap1,
-    paymentStatus: "Swapped",
-    totalAmount: "$250.00",
-    paymentMethod: "20 LINK For 0.1074ETH",
-    data: "03/19/23"
-  },
-  {
-    avatar: activReceived,
-    paymentStatus: "Received",
-    totalAmount: "$150.00",
-    paymentMethod: "NFT From mutant.ens",
-    data: "03/19/23"
-  },
-  {
-    avatar: activTransfer,
-    paymentStatus: "Transferred",
-    totalAmount: "$350.00",
-    paymentMethod: "WBTC To 0x6584...BD68",
-    data: "03/19/23"
-  },
-  {
-    avatar: activBridged,
-    paymentStatus: "Bridged",
-    totalAmount: "$450.00",
-    paymentMethod: "Ethereum To Polygon",
-    data: "03/19/23"
-  },
-  {
-    avatar: activSwap,
-    paymentStatus: "Swapped",
-    totalAmount: "$550.00",
-    paymentMethod: "1ETH For 3,500USDC",
-    data: "03/19/23"
-  },
-]
+const pageCount: number = Math.ceil(activityData.length / 5)
 
 export function CustomSwapList() {
+  let [pageIndex, setPageIndex] = useState(0)
+  let pageData = activityData.slice(pageIndex * 5, Math.min((pageIndex + 1) * 5, activityData.length))
+
+  const handlePreviousPage = () => {
+    setPageIndex(old => Math.max(old - 1, 0));
+    
+  };
+
+  const handleNextPage = () => {
+    setPageIndex(old => (old < pageCount - 1 ? old + 1 : old));
+  };
   return (
     <div>
       <p className="text-3xl text-white pb-[37px] font-inter font-bold">Recent Activity</p>
-      {data.map((data, index) => (
-        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 p-3 transition ease-in-out delay-80 hover:text-custom-c8 duration-300" key={index}>
+      {pageData.map((data, index) => (
+        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 pr-3 py-3 pr-0 transition ease-in-out delay-80 hover:text-custom-c8 duration-300" key={index}>
           <div className="flex">
             <div className="w-2/8">
               <div
@@ -87,7 +60,7 @@ export function CustomSwapList() {
             </div>
             <div className="w-4/8 flex flex-col w-[100%]">
               <div className="flex items-center justify-between">
-                <div className="h-1/2 flex font-bold items-center  text-white ml-2 text-lg transition ease-in-out delay-80 duration-300 group-hover:text-custom-c8">{data.paymentStatus}</div>
+                <div className="h-1/2 flex font-bold items-center  text-white text-lg transition ease-in-out delay-80 duration-300 group-hover:text-custom-c8">{data.paymentStatus}</div>
                 <span className="text-white text-xs">{data.data}</span>
               </div>
               <div className="h-1/2 flex items-center text-white text-base">{data.paymentMethod}
@@ -113,16 +86,22 @@ export function CustomSwapList() {
         // </TableRow>
       ))}
       <div className="flex items-center justify-end">
-        <Pagination className=" text-white">
+        <Pagination className="text-white">
           <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious className="hover:bg-black" />
+            <PaginationItem className={pageIndex > 0 ? 'visible' : 'invisible'}>
+              <PaginationPrevious
+                onClick={handlePreviousPage}
+                className="hover:bg-black"
+              />
             </PaginationItem>
             <PaginationItem>
-              Page 1 of 5
+              Page {pageIndex + 1} of {pageCount}
             </PaginationItem>
-            <PaginationItem>
-              <PaginationNext className="hover:bg-black" />
+            <PaginationItem className={pageIndex < pageCount - 1 ? 'visible' : 'invisible'}>
+              <PaginationNext
+                onClick={handleNextPage}
+                className="hover:bg-black"
+              />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

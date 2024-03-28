@@ -8,6 +8,7 @@ import {
   DotsHorizontalIcon,
 } from "@radix-ui/react-icons"
 import sortIcon from '@/components/icons/sortIcon.svg'
+
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -38,98 +39,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-const data: Payment[] = [
-  {
-    id: "1",
-    avatar: "/logo_ETH_s.svg",
-    prince: 3500,
-    asset: "Ethereum ETH",
-    balance: 2.5,
-    value: 8750
-  },
-  {
-    id: "2",
-    avatar: "/logo_WBTC_s.svg",
-    prince: 3500,
-    asset: "Wrapped Bitcoin WBTC",
-    balance: 0.05,
-    value: 8750
-  },
-  {
-    id: "3",
-    avatar: "/logo_FRAX_s.svg",
-    prince: 3500,
-    asset: "Frax FRAX",
-    balance: 360,
-    value: 8750
-  },
-  {
-    id: "4",
-    avatar: "/logo_PEPE_s.svg",
-    prince: 3500,
-    asset: "Pepe PEPE",
-    balance: 1000520,
-    value: 8750
-  },
-  {
-    id: "5",
-    avatar: "/logo_MKR_s.svg",
-    prince: 3500,
-    asset: "Maker MKR",
-    balance: 1,
-    value: 8750
-  },
-  {
-    id: "6",
-    avatar: "/logo_UNI.svg",
-    prince: 3500,
-    asset: "Uniswap UNI",
-    balance: 25,
-    value: 8750
-  },
-  {
-    id: "7",
-    avatar: "/logo_LINK.svg",
-    prince: 721,
-    asset: "ChainLink Token LINK",
-    balance: 50,
-    value: 8750
-  },
-  {
-    id: "8",
-    avatar: "/logo_RBN.svg",
-    prince: 721,
-    asset: "Ribbon RBN",
-    balance: 350,
-    value: 8750
-  },
-  {
-    id: "9",
-    avatar: "/logo_SHIB.svg",
-    prince: 721,
-    asset: "Shiba INU SHIB",
-    balance: 3800,
-    value: 8750
-  },
-  {
-    id: "10",
-    avatar: "/logo_LDO.svg",
-    prince: 721,
-    asset: "Lido DAO Token LDO",
-    balance: 1,
-    value: 8750
-  },
-]
-
-export type Payment = {
-  id: string
-  avatar: string
-  prince: number
-  asset: string
-  balance: number
-  value: number
-}
+import { Payment, paymentData } from "@/data/sample"
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -159,7 +69,7 @@ export const columns: ColumnDef<Payment>[] = [
             sizes="20vw"
             priority
           /> */}
-          <img className="pr-2" src={data[row.index].avatar} />
+          <img className="pr-2" src={paymentData[row.index].avatar} />
           {row.getValue('asset')}
         </div>
       );
@@ -244,31 +154,74 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ]
 
-export function DataTableDemo() {
-  const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+}
+
+export function DataTableDemo<TData, TValue>({
+  columns,
+  data,
+}: DataTableProps<TData, TValue>) {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
+  const [pageIndex, setPageIndex] = React.useState(0); // Add this line for pagination state
 
   const table = useReactTable({
     data,
     columns,
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
     },
-  })
+    onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    manualPagination: false, // Set to true if you are controlling pagination server-side
+    pageCount: Math.ceil(data.length / 10), // Provide the total page count here, -1 if unknown or controlled server-side
+  });
 
+  // Update the page index when the user interacts with the pagination controls
+  const handlePreviousPage = () => {
+    setPageIndex(old => Math.max(old - 1, 0));
+    table.previousPage();
+  };
+
+  const handleNextPage = () => {
+    setPageIndex(old => (old < table.getPageCount() - 1 ? old + 1 : old));
+    table.nextPage();
+  };
+  const renderPagination = () => {
+    return (
+      <div className="flex items-center justify-end space-x-2 py-4">
+        <Pagination className="text-white">
+          <PaginationContent>
+            <PaginationItem className={pageIndex > 0?'visible':'invisible'}>
+              <PaginationPrevious
+                onClick={handlePreviousPage}
+                className="hover:bg-black"
+              />
+            </PaginationItem>
+            <PaginationItem>
+              Page {pageIndex + 1} of {table.getPageCount()}
+            </PaginationItem>
+            <PaginationItem className={pageIndex < table.getPageCount() - 1?'visible':'invisible'}>
+              <PaginationNext
+                onClick={handleNextPage}
+                className="hover:bg-black"
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    );
+  };
   return (
     <div className="w-full">
       <p className="text-3xl text-white pb-[37px] font-inter font-bold">Your holdings</p>
@@ -320,21 +273,7 @@ export function DataTableDemo() {
           )}
         </TableBody>
       </Table>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <Pagination className=" text-white">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious className="hover:bg-black" />
-            </PaginationItem>
-            <PaginationItem>
-              Page 1 of 5
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext className="hover:bg-black" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
+      {renderPagination()}
     </div>
   )
 }
