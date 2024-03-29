@@ -73,6 +73,7 @@ export function CustomSwapList() {
             <PaginationItem className={pageIndex > 0 ? 'visible' : 'invisible'}>
               <PaginationPrevious
                 onClick={handlePreviousPage}
+                className="hover:bg-transparent"
               />
             </PaginationItem>
             <PaginationItem>
@@ -81,6 +82,7 @@ export function CustomSwapList() {
             <PaginationItem className={pageIndex < pageCount - 1 ? 'visible' : 'invisible'}>
               <PaginationNext
                 onClick={handleNextPage}
+                className="hover:bg-transparent"
               />
             </PaginationItem>
           </PaginationContent>

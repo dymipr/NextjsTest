@@ -187,6 +187,7 @@ export function DataTableDemo<TData, TValue>({
             <PaginationItem className={pageIndex > 0?'visible':'invisible'}>
               <PaginationPrevious
                 onClick={handlePreviousPage}
+                className="hover:bg-transparent"
               />
             </PaginationItem>
             <PaginationItem>
@@ -195,6 +196,7 @@ export function DataTableDemo<TData, TValue>({
             <PaginationItem className={pageIndex < table.getPageCount() - 1?'visible':'invisible'}>
               <PaginationNext
                 onClick={handleNextPage}
+                className="hover:bg-transparent"
               />
             </PaginationItem>
           </PaginationContent>
