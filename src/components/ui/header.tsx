@@ -36,6 +36,7 @@ export default function Header() {
                                 src={etherLogo}
                                 alt="CodeBucks logo"
                                 className="w-[32px] h-[32px]"
+                                onClick={ () => setActive(!active) }
                                 priority
                             />
                             <div className=" ml-2 max-sm:hidden">degentrades.lens</div>
