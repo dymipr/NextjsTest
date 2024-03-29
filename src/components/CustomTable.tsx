@@ -53,7 +53,7 @@ export const columns: ColumnDef<Holding>[] = [
     },
     cell: ({ row }) => {
       return (
-        <div className="text-left font-medium flex items-center  text-white">
+        <div className="text-left font-medium flex items-center">
           <img className="pr-2" src={holdingData[row.index].avatar} />
           {row.getValue('asset')}
         </div>
