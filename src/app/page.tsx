@@ -9,7 +9,7 @@ import MyBalance from "@/components/MyBalances";
 import { DataTableDemo, columns } from "@/components/CustomTable";
 import { CustomSwapList } from "@/components/CustomSwapLists";
 import Footer from "@/components/Footer";
-import { paymentData } from "@/data/sample";
+import { holdingData } from "@/data/sample";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       <div className="grid gap-6 pr-[80px] pl-[80px] pt-[32px] grid-cols-2 max-[1100px]:grid-cols-1 max-sm:px-2">
         <div>
-          <DataTableDemo columns={columns} data={paymentData} />
+          <DataTableDemo columns={columns} data={holdingData} />
         </div>
         <div>
           <CustomSwapList />

@@ -7,15 +7,7 @@ import logoWBTC from '@/components/icons/logo_WBTC.svg'
 import logoFRAX from '@/components/icons/logo_FRAX.svg'
 import logoPEPE from '@/components/icons/logo_PEPE.svg'
 import logoMKR from '@/components/icons/logo_MKR.svg'
-import logoUNI from '@/components/icons/logo_UNI.svg'
-import logoLINK from '@/components/icons/logo_LINK.svg'
-import logoRBN from '@/components/icons/logo_RBN.svg'
-import logoSHIB from '@/components/icons/logo_SHIB.svg'
-import logoLDO from '@/components/icons/logo_LDO.svg'
 import trandingUp from '@/components/icons/trending_up.svg'
-
-
-
 
 export default function MyBalance() {
     return (

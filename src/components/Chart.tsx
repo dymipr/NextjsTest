@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import trandingUp from '@/components/icons/trending_up.svg'
+
 const data = [
     {
         name: '',
@@ -52,17 +53,11 @@ const data = [
         name: 'DEC',
         data: 900,
     },
-    // {
-    //     name: '',
-    //     data: 900,
-    // },
 ];
 interface Payload {
     value: string | number;
-    // Add other properties that your payload might have
 }
 
-// Define the props for the CustomTooltip component
 interface CustomTooltipProps {
     active?: boolean;
     payload?: Payload[];
@@ -74,7 +69,6 @@ interface CustomAxisProps {
     y ?: number;
     payload? : Payload;
 }
-// Define the CustomTooltip component with type annotations
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (

@@ -4,7 +4,7 @@ import activTransfer from '@/components/icons/activity_transferred.svg'
 import activBridged from '@/components/icons/activity_bridged.svg'
 import activSwap from '@/components/icons/activity_swap.svg'
 
-export type Payment = {
+export type Holding = {
     id: string
     avatar: string
     prince: number
@@ -14,7 +14,7 @@ export type Payment = {
 } 
 
   
-export const paymentData: Payment[] = [
+export const holdingData: Holding[] = [
     {
       id: "1",
       avatar: "/logo_ETH_s.svg",

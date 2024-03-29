@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Optimized responsive UI with Next.js, shadcn UI, and Tailwind CSS 🔥
+
+For Demo checkout following links👇: <br />
+[Test Project Website](https://nextjs-test-alpha.vercel.app/) <br />
+
+Starter Code Files👇: <br />
+[Test Project Website Starter Code](https://github.com/ProAardvark/NextjsTest) <br />
+
+### ⭐DO NOT FORGET TO STAR THIS REPO⭐
+
+### Images of The This Website:
+
+#### Home
+ResPonsive UI👇: <br />
+![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/totalPage.png?raw=true)<br />
+Mobile view👇: <br />
+![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/mobile1.png?raw=true)<br />
+![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/mobile3.png?raw=true)<br />
 
 ## Getting Started
 
@@ -10,8 +27,6 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

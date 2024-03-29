@@ -3,13 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import {
-  CaretSortIcon,
-  ChevronDownIcon,
-  DotsHorizontalIcon,
-} from "@radix-ui/react-icons"
-import sortIcon from '@/components/icons/sortIcon.svg'
-
-import {
   ColumnDef,
   ColumnFiltersState,
   SortingState,
@@ -24,9 +17,7 @@ import {
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
@@ -39,9 +30,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Payment, paymentData } from "@/data/sample"
+import sortIcon from '@/components/icons/sortIcon.svg'
+import { Holding, holdingData } from "@/data/sample"
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Holding>[] = [
   {
     accessorKey: "asset",
     header: ({ column }) => {
@@ -62,14 +54,7 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => {
       return (
         <div className="text-left font-medium flex items-center  text-white">
-          {/* <Image
-            src={row.getValue('avatar')}
-            alt="Arrow"
-            className="w-2 h-2 md:w-24 md:h-auto mt-0.7"
-            sizes="20vw"
-            priority
-          /> */}
-          <img className="pr-2" src={paymentData[row.index].avatar} />
+          <img className="pr-2" src={holdingData[row.index].avatar} />
           {row.getValue('asset')}
         </div>
       );
@@ -114,7 +99,6 @@ export const columns: ColumnDef<Payment>[] = [
     cell: ({ row }) => {
       const prince = parseFloat(row.getValue("prince"))
 
-      // Format the prince as a dollar prince
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -141,9 +125,8 @@ export const columns: ColumnDef<Payment>[] = [
       )
     },
     cell: ({ row }) => {
-      const value = parseFloat(row.getValue("value"))
+      const value = parseFloat(row.getValue("value"));
 
-      // Format the value as a dollar value
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
@@ -166,7 +149,7 @@ export function DataTableDemo<TData, TValue>({
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
-  const [pageIndex, setPageIndex] = React.useState(0); // Add this line for pagination state
+  const [pageIndex, setPageIndex] = React.useState(0);
 
   const table = useReactTable({
     data,
@@ -183,11 +166,10 @@ export function DataTableDemo<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    manualPagination: false, // Set to true if you are controlling pagination server-side
-    pageCount: Math.ceil(data.length / 10), // Provide the total page count here, -1 if unknown or controlled server-side
+    manualPagination: false,
+    pageCount: Math.ceil(data.length / 10),
   });
 
-  // Update the page index when the user interacts with the pagination controls
   const handlePreviousPage = () => {
     setPageIndex(old => Math.max(old - 1, 0));
     table.previousPage();
@@ -205,7 +187,6 @@ export function DataTableDemo<TData, TValue>({
             <PaginationItem className={pageIndex > 0?'visible':'invisible'}>
               <PaginationPrevious
                 onClick={handlePreviousPage}
-                className="hover:bg-black"
               />
             </PaginationItem>
             <PaginationItem>
@@ -214,7 +195,6 @@ export function DataTableDemo<TData, TValue>({
             <PaginationItem className={pageIndex < table.getPageCount() - 1?'visible':'invisible'}>
               <PaginationNext
                 onClick={handleNextPage}
-                className="hover:bg-black"
               />
             </PaginationItem>
           </PaginationContent>

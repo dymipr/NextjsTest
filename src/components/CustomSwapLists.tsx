@@ -66,12 +66,6 @@ export function CustomSwapList() {
           </div>
         </div>
 
-        // <TableRow key={data.avatar}>
-        //   <TableCell className="font-medium">{data.avatar}</TableCell>
-        //   <TableCell>{data.paymentStatus}</TableCell>
-        //   <TableCell>{data.paymentMethod}</TableCell>
-        //   <TableCell className="text-right">{data.totalAmount}</TableCell>
-        // </TableRow>
       ))}
       <div className="flex items-center justify-end">
         <Pagination className="text-white">
@@ -79,7 +73,6 @@ export function CustomSwapList() {
             <PaginationItem className={pageIndex > 0 ? 'visible' : 'invisible'}>
               <PaginationPrevious
                 onClick={handlePreviousPage}
-                className="hover:bg-black"
               />
             </PaginationItem>
             <PaginationItem>
@@ -88,7 +81,6 @@ export function CustomSwapList() {
             <PaginationItem className={pageIndex < pageCount - 1 ? 'visible' : 'invisible'}>
               <PaginationNext
                 onClick={handleNextPage}
-                className="hover:bg-black"
               />
             </PaginationItem>
           </PaginationContent>

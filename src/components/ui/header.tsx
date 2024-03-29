@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-
 import profileLogo from '@/components/icons/LOGO.svg'
 import etherLogo from '@/components/icons/ether.png'
 import { Button } from "./button";
@@ -50,7 +49,7 @@ export default function Header() {
                     <div className="flex flex-col items-end">
                         <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-3 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
                         <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
+                        <a className="border-b-4 border-[#C86C00] text-custom-c8 ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
                         <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 mb-8 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
                     </div>
                 </div>
