@@ -24,7 +24,7 @@ export default function MyBalance() {
                 <div className="z-20">
                     <p className="text-c1 text-white font-[HankenGroteskRegular] ">My Balance</p>
                     <p className="text-c4 text-white font-[HankenGroteskRegular] pb-4 font-bold max-[600px]:text-[60px]">$25,350.52</p>
-                    <p className="block text-xs md:text-lg mb-4 font-[HankenGroteskRegular] w-[300px] md:w-[400px] text-white">
+                    <div className="block text-xs md:text-lg mb-4 font-[HankenGroteskRegular] w-[300px] md:w-[400px] text-white">
                         Grow your portfolio{" "}
                         <a href="your_other_link_url" className="text-[#C86C00] underline font-[HankenGroteskRegular] inline font-normal">
                             check latest listed coins
@@ -40,7 +40,7 @@ export default function MyBalance() {
                             />
                         </div>
                         <p className="text-white  text-xs font-extralight">*All values represented in USD</p>
-                    </p>
+                    </div>
                 </div>
                 <div className="z-10">
                     <Image
@@ -54,7 +54,7 @@ export default function MyBalance() {
             <div className=" pt-8">
                 <p className=" text-2xl text-white pb-4">Your top movers</p>
                 <div className="h-[35%] flex overflow-x-hidden">
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex " style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}

@@ -47,7 +47,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className="inline hover:text-custom-c8"
+          className=" hover:text-custom-c8 flex justify-center text-white"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Asset
@@ -61,7 +61,7 @@ export const columns: ColumnDef<Payment>[] = [
     },
     cell: ({ row }) => {
       return (
-        <div className="text-left font-medium flex items-center">
+        <div className="text-left font-medium flex items-center  text-white">
           {/* <Image
             src={row.getValue('avatar')}
             alt="Arrow"
@@ -80,7 +80,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className=" hover:text-custom-c8 max-sm:hidden flex justify-center"
+          className=" hover:text-custom-c8 max-sm:hidden flex justify-center text-white"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Balance
@@ -99,7 +99,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className=" flex justify-center hover:text-custom-c8  max-sm:hidden"
+          className=" flex justify-center hover:text-custom-c8  max-sm:hidden text-white"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Price
@@ -128,7 +128,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <div
-          className="flex hover:text-custom-c8 justify-center"
+          className="flex hover:text-custom-c8 justify-center  text-white"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Value

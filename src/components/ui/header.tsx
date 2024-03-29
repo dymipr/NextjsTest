@@ -1,20 +1,9 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import {
-    Menubar,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarTrigger,
-} from "@/components/ui/menubar"
 
 import profileLogo from '@/components/icons/LOGO.svg'
 import etherLogo from '@/components/icons/ether.png'
-
-import { Card } from "@/components/ui/card";
 import { Button } from "./button";
 
 export default function Header() {
@@ -34,10 +23,10 @@ export default function Header() {
                         />
                     </div>
                     <div className="visible max-lg:hidden">
-                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
-                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
-                        <a className="text-white border-b-4 border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
-                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
+                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] hover:text-custom-c8 px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
+                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] hover:text-custom-c8 px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
+                        <a className=" border-b-4 border-[#C86C00] px-2 mx-2 pb-1 text-custom-c8 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
+                        <a className="text-white hover:border-b-4 hover:border-[#C86C00] hover:text-custom-c8 px-2 mx-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
                     </div>
                     <div className="flex items-center">
 
@@ -59,10 +48,10 @@ export default function Header() {
                 </div>
                 <div className={`${ !active && "hidden" }`}>
                     <div className="flex flex-col items-end">
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-3 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
-                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] ml-3 mr-3 p-2 pb-1 mb-8 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-3 pb-1 rounded-sm font-[HankenGroteskRegular]">Swap</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Bridge</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 rounded-sm font-[HankenGroteskRegular]">Dashboard</a>
+                        <a className="text-white border-b-4 border-transparent hover:border-[#C86C00] hover:text-custom-c8 ml-3 mr-3 p-2 pb-1 mb-8 rounded-sm font-[HankenGroteskRegular]">Analytics</a>
                     </div>
                 </div>
             </div>

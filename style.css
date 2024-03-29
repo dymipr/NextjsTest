@@ -17,3 +17,17 @@
       transform: translateX(0px);
     }
   }
+  @keyframes smScrollAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-600px);
+    }
+    60% {
+      transform: translateX(-600px);
+    }
+    62% {
+      transform: translateX(0px);
+    }
+  }

@@ -78,7 +78,7 @@ interface CustomAxisProps {
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            <div className=" text-custom-c8 bg-white/50 border-4 border-custom-c8 rounded-full pl-3 pr-3">
+            <div className=" text-custom-c8 bg-white/80 border-4 border-custom-c8 rounded-full pl-3 pr-3">
                 <p className="label">{`${label} : ${payload[0].value}`}</p>
             </div>
         );
@@ -91,7 +91,7 @@ const CustomizedAxisTick: React.FC<CustomAxisProps> = ({x, y, payload}) =>  {
     
       return (
         <g transform={`translate(${x},${y})`}>
-          <text x={10} y={16} textAnchor="start" fill="#666">
+          <text x={10} y={16} textAnchor="start" fill="#666" fontSize={12}>
             {payload?.value}
           </text>
         </g>
@@ -130,7 +130,7 @@ export default class ChartG extends PureComponent {
                             </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="5 10" vertical={false} />
-                        <XAxis hide={false} height={50} dataKey="name" />
+                        <XAxis hide={false} fontSize={12} fill="#fff" height={50} dataKey="name" />
                         <YAxis axisLine={false} ticks={[0,100,200,300,400,500,600,700,800,900, 1000]}  dataKey="data" tick={<CustomizedAxisTick/>} />
                         <Tooltip cursor={{ stroke: '#C86C00', strokeWidth: 2 }} content={<CustomTooltip />} />
                         <Area type="linear" dataKey="data" fill="url(#colorUv)" stroke='#FF6800' />

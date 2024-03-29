@@ -1,21 +1,9 @@
 "use client"
 import Image from "next/image"
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
@@ -43,7 +31,7 @@ export function CustomSwapList() {
     <div>
       <p className="text-3xl text-white pb-[37px] font-inter font-bold">Recent Activity</p>
       {pageData.map((data, index) => (
-        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 pr-3 py-3 pr-0 transition ease-in-out delay-80 hover:text-custom-c8 duration-300" key={index}>
+        <div className="group w-full flex-none rounded-lg hover:bg-custom-orange/10 pr-3 py-3 transition ease-in-out delay-80 hover:text-custom-c8 duration-300" key={index}>
           <div className="flex">
             <div className="w-2/8">
               <div
@@ -52,7 +40,7 @@ export function CustomSwapList() {
                 <Image
                   src={data.avatar}
                   alt="Arrow"
-                  className="w-full h-auto"
+                  className="w-[117px] h-auto"
                   sizes="16vw"
                   priority
                 />
