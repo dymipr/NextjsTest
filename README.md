@@ -12,10 +12,10 @@ Starter Code Files👇: <br />
 
 #### Home
 ResPonsive UI👇: <br />
-![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/totalPage.png?raw=true)<br />
+![Nextjs Personal Blog Website](https://github.com/ProAardvark/NextjsTest/tree/master/public/totalPage.png?raw=true)<br />
 Mobile view👇: <br />
-![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/mobile1.png?raw=true)<br />
-![Nextjs Personal Blog Website](https://github.com/Hi-828/test-project-onchain/blob/main/public/mobile3.png?raw=true)<br />
+![Nextjs Personal Blog Website](https://github.com/ProAardvark/NextjsTest/tree/master/public/mobile1.png?raw=true)<br />
+![Nextjs Personal Blog Website](https://github.com/ProAardvark/NextjsTest/tree/master/public/mobile3.png?raw=true)<br />
 
 ## Getting Started
 
