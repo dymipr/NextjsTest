@@ -62,6 +62,19 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        desktop: {
+          '0%': {transform: 'translateX(0px)',},
+
+          '60%': {transform: 'translateX(calc(-500px + 100%))',},
+          '80%': {transform: 'translateX(calc(-500px + 100%))',},
+          '100%': {transform: 'translateX(0)',},
+        },
+        mobile: {
+          '0%': {transform: 'translateX(0px)',},
+          '60%': {transform: 'translateX(calc(-950px + 100%))',},
+          '80%': {transform: 'translateX(calc(-950px + 100%))',},
+          '100%': {transform: 'translateX(0)',},
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -72,6 +85,8 @@ const config = {
         },
       },
       animation: {
+        "moving_desktop" : "desktop 10s linear infinite",
+        "moving_mobile" : "mobile 10s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

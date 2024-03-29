@@ -46,7 +46,7 @@ export default function MyBalance() {
             <div className=" pt-8">
                 <p className=" text-2xl text-white pb-4">Your top movers</p>
                 <div className="h-[35%] flex overflow-x-hidden">
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex  max-md:animate-moving_mobile animate-moving_desktop">
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}
@@ -76,7 +76,7 @@ export default function MyBalance() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex max-md:animate-moving_mobile animate-moving_desktop">
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}
@@ -107,7 +107,7 @@ export default function MyBalance() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex max-md:animate-moving_mobile animate-moving_desktop">
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}
@@ -138,7 +138,7 @@ export default function MyBalance() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex max-md:animate-moving_mobile animate-moving_desktop">
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}
@@ -169,7 +169,7 @@ export default function MyBalance() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex" style={{ animation: 'scrollAnimation 20s linear infinite' }}>
+                    <div className="w-[210px] h-[70px] flex-none bg-[#190F01] rounded-lg flex-shrink-0 mr-5 flex max-md:animate-moving_mobile animate-moving_desktop">
                         <div className="w-1/3 flex-none">
                             <div
                                 style={{ width: "55px", height: "55px" }}

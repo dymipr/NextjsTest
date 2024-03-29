@@ -65,9 +65,9 @@ interface CustomTooltipProps {
 }
 
 interface CustomAxisProps {
-    x ?: number;
-    y ?: number;
-    payload? : Payload;
+    x?: number;
+    y?: number;
+    payload?: Payload;
 }
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -80,17 +80,17 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
 
     return null;
 };
-const CustomizedAxisTick: React.FC<CustomAxisProps> = ({x, y, payload}) =>  {
-    if(payload?.value === 0) return null;
-    
-      return (
+const CustomizedAxisTick: React.FC<CustomAxisProps> = ({ x, y, payload }) => {
+    if (payload?.value === 0) return null;
+
+    return (
         <g transform={`translate(${x},${y})`}>
-          <text x={10} y={16} textAnchor="start" fill="#666" fontSize={12}>
-            {payload?.value}
-          </text>
+            <text x={10} y={16} textAnchor="start" fill="#FFF" fontSize={12}>
+                {payload?.value}
+            </text>
         </g>
-      );
-  }
+    );
+}
 export default class ChartG extends PureComponent {
     render() {
         return (
@@ -112,7 +112,7 @@ export default class ChartG extends PureComponent {
                 <ResponsiveContainer width="100%" height={370}>
                     <AreaChart
                         margin={{
-                            left:-50
+                            left: -50
                         }}
                         width={500}
                         data={data}
@@ -124,8 +124,8 @@ export default class ChartG extends PureComponent {
                             </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="5 10" vertical={false} />
-                        <XAxis hide={false} fontSize={12} fill="#fff" height={50} dataKey="name" />
-                        <YAxis axisLine={false} ticks={[0,100,200,300,400,500,600,700,800,900, 1000]}  dataKey="data" tick={<CustomizedAxisTick/>} />
+                        <XAxis hide={false} fontSize={12} dataKey="name" tick={{fill : '#FFF'}} />
+                        <YAxis axisLine={false} ticks={[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]} dataKey="data" tick={<CustomizedAxisTick />} />
                         <Tooltip cursor={{ stroke: '#C86C00', strokeWidth: 2 }} content={<CustomTooltip />} />
                         <Area type="linear" dataKey="data" fill="url(#colorUv)" stroke='#FF6800' />
                     </AreaChart>
